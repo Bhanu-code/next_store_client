@@ -1,5 +1,13 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material"
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { addProduct } from "../../redux/cartRedux"
+import { useDispatch } from "react-redux"
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Info = styled.div`
@@ -64,6 +72,19 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  const user = useSelector(state => state.user.currentUser);
+  const dispatch = useDispatch()
+
+  // const handleClick = () => {
+  //   //update cart
+  //   user ?
+  //     dispatch(
+  //       addProduct({ ...product, quantity, color, size })
+  //     ) : <>toast("Please Login") <ToastContainer /></>
+
+  // }
+
+
   return (
     <Container>
       <Circle />
@@ -73,11 +94,22 @@ const Product = ({ item }) => {
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
-          <SearchOutlined />
+
+          <Link to={`/product/${item._id}`}>
+            <SearchOutlined />
+          </Link>
+
+
         </Icon>
-        <Icon>
+        <Icon onClick={() => {
+          !user && toast.info("Please Login", {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 1500,
+          })
+        }} >
           <FavoriteBorderOutlined />
         </Icon>
+        <ToastContainer />
       </Info>
     </Container>
   );

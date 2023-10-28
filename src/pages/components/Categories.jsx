@@ -1,4 +1,4 @@
-import styled  from "styled-components"
+import styled from "styled-components"
 import { categories } from '../data';
 import CategoryItem from './CategoryItem';
 
@@ -7,16 +7,20 @@ import { mobile } from "../responsive";
 const Container = styled.div`
 display: flex;
 justify-content: space-between;
-${mobile({padding: "0px", flexDirection: "column"})}
+${mobile({ padding: "0px", flexDirection: "column" })}
 `
 
 const Categories = () => {
   return (
-    <Container>
-    {categories.map(item=>(
-        <CategoryItem item={item} />
-    ))}
-    </Container>
+    <>
+      <h2 style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>Shop According to Categories</h2>
+      <Container>
+        {categories.map(item => (
+          <CategoryItem item={item} />
+        ))}
+      </Container>
+    </>
+
   )
 }
 

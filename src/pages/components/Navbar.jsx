@@ -3,20 +3,22 @@ import styled from 'styled-components';
 // import Badge from '@mui/material/Badge';
 // or
 import { Badge } from '@mui/material';
+import { Link } from "react-router-dom"
 
 import { Search, ShoppingCart } from '@mui/icons-material';
 import { mobile } from '../responsive';
+import { useSelector } from 'react-redux';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Container = styled.div`
 height: 60px;
-${mobile({height: "50px"})}
+${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
 padding: 10px 20px;
 display: flex;
 justify-content: space-between;
-${mobile({padding: "10px 0px"})}
+${mobile({ padding: "10px 0px" })}
 `
 
 const Left = styled.div`
@@ -30,8 +32,8 @@ text-align: center;
 `
 const Logo = styled.div`
 font-weight: bold;
-font-size: 25px;
-${mobile({fontSize: "24px"})}
+font-size: 35px;
+${mobile({ fontSize: "24px" })}
 `
 
 const Right = styled.div`
@@ -39,18 +41,20 @@ flex: 1;
 display: flex;
 align-items: center;
 justify-content: flex-end;
-${mobile({flex: 2, justifyContent: "center"})}
+${mobile({ flex: 2, justifyContent: "center" })}
 `
 const Language = styled.span`
 font-size: 14px;
 cursor: pointer;
-${mobile({display: "none"})}
+${mobile({ display: "none" })}
 `
 
 const MenuItem = styled.div`
 font-size: 14px;
 margin-left: 25px;
-${mobile({fontSize: "12px", marginLeft: "10px"})}
+text-decoration: none;
+cursor: pointer;
+${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `
 
 const SearchContainer = styled.div`
@@ -62,31 +66,48 @@ padding: 5px;
 `
 const Input = styled.input`
 border: none;
-${mobile({width: "50px"})}
+${mobile({ width: "50px" })}
 `
 
 const Navbar = () => {
+    const user = useSelector(state => state.user.currentUser);
+    const quantity = useSelector(state => state.cart.quantity);
+
     return (
         <Container>
             <Wrapper>
                 <Left>
-                    <Language>EN</Language>
+                    {/* <Language>EN</Language>
                     <SearchContainer>
                         <Input placeholder='Search..' />
                         <Search style={{ color: "gray", fontSize: "16px" }} />
-                    </SearchContainer>
+                    </SearchContainer> */}
                 </Left>
                 <Center>
                     <Logo>NEXT.Store</Logo>
                 </Center>
                 <Right>
-                    <MenuItem>
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCart />
-                        </Badge>
-                    </MenuItem>
-                        <MenuItem>LOGIN</MenuItem>
-                        <MenuItem>REGISTER</MenuItem>
+                    <Link to='/cart/'>
+                        <MenuItem>
+                            <Badge badgeContent={quantity} color="primary">
+                                <ShoppingCart />
+                            </Badge>
+                        </MenuItem>
+                    </Link>
+                    {!user && <>
+                        <Link to='/login' >
+                            <MenuItem>LOGIN</MenuItem>
+                        </Link>
+                        <Link to='/register'>
+                            <MenuItem>REGISTER</MenuItem>
+                        </Link>
+                    </>
+                    }
+                    {user && 
+                        <Link to='/logout'>
+                            <MenuItem>LOGOUT</MenuItem>
+                        </Link>
+                    }
                 </Right>
             </Wrapper>
         </Container>

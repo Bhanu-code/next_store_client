@@ -107,7 +107,7 @@ const Slider = () => {
         
         <Slide>
           <ImgContainer>
-            <Image src="https://img.freepik.com/free-photo/stylish-tall-arabian-man-model-white-shirt-jeans-sunglasses-posed-street-city-beard-attractive-arab-guy_627829-2583.jpg?w=2000" />
+            <Image src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
@@ -117,7 +117,7 @@ const Slider = () => {
         </Slide>
         <Slide>
           <ImgContainer>
-            <Image src="https://img.freepik.com/free-photo/stylish-tall-arabian-man-model-white-shirt-jeans-sunglasses-posed-street-city-beard-attractive-arab-guy_627829-2583.jpg?w=2000" />
+            <Image src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
