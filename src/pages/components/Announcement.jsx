@@ -14,7 +14,7 @@ font-weight: bold;
 const Announcement = () => {
     return (
         <Container>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet commodi assumenda
+            Find your wishing products next to you at Next.Store
         </Container>
     )
 }

@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import {login} from "../redux/userCalls"
 
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
+
 const Container = styled.div`
 width: 100vw;
 height: 100vh;
@@ -60,6 +63,9 @@ const Login = () => {
   const handleLogin = (e)=>{
     e.preventDefault()
     login(dispatch, {username, password})
+    if(error == true){
+      toast.warning("Either username or password is wrong! Try Again.")
+    }
   }
 
   return (
@@ -72,7 +78,8 @@ const Login = () => {
                 <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
                 <Button onClick={handleLogin} disabled={isFetching} >LOGIN</Button>
                 <Link>FORGOT PASSWORD?</Link>
-                <Link>CREATE ACCOUNT</Link>
+                <Link to='/register'>CREATE ACCOUNT</Link>
+                <ToastContainer />
             </Form>
         </Wrapper> 
     </Container>
