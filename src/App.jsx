@@ -5,7 +5,6 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Success from './pages/Success';
-import Logout from './pages/Logout'
 
 
 import { Route, Routes } from 'react-router-dom';
@@ -22,9 +21,7 @@ const App = () => {
       <Route path="/login"
         element={user ? <Home /> : <Login />}
       />
-      <Route path="/logout"
-        element={user ? <Logout /> : <Home />}
-      />
+      
       <Route path="/cart" element={<Cart />} />
       <Route path="/success" element={<Success />} />
 

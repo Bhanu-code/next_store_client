@@ -7,7 +7,10 @@ import { Link } from "react-router-dom"
 
 import { Search, ShoppingCart } from '@mui/icons-material';
 import { mobile } from '../responsive';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {logout} from '../../redux/userCalls'
+
+import { useNavigate } from 'react-router-dom';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Container = styled.div`
@@ -73,6 +76,15 @@ const Navbar = () => {
     const user = useSelector(state => state.user.currentUser);
     const quantity = useSelector(state => state.cart.quantity);
 
+    const navigateTo = useNavigate();
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        e.preventDefault();
+        logout(dispatch);
+        navigateTo('/');
+    }
+
     return (
         <Container>
             <Wrapper>
@@ -103,8 +115,8 @@ const Navbar = () => {
                         </Link>
                     </>
                     }
-                    {user && 
-                        <Link to='/logout'>
+                    {user &&
+                        <Link onClick={handleLogout}>
                             <MenuItem>LOGOUT</MenuItem>
                         </Link>
                     }

@@ -1,4 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const userSlice = createSlice({
     name: "user",
@@ -14,13 +17,20 @@ const userSlice = createSlice({
         loginSuccess: (state, action)=>{
            state.isFetching = false;
            state.currentUser = action.payload;
+           toast.success('logged in');
+           
         },
         loginFail: (state)=>{
            state.isFetching = false;
            state.error = true;
         },
+        logOut: (state)=>{
+            state.isFetching = false;
+            state.currentUser = null;
+            state.error = false;
+        },
     },
 });
 
-export const { loginStart, loginSuccess, loginFail } = userSlice.actions
+export const { loginStart, loginSuccess, loginFail, logOut } = userSlice.actions
 export default userSlice.reducer;

@@ -73,7 +73,7 @@ const Icon = styled.div`
 
 const Product = ({ item }) => {
   const user = useSelector(state => state.user.currentUser);
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   // const handleClick = () => {
   //   //update cart

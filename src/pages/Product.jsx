@@ -112,6 +112,7 @@ cursor: pointer;
 const Product = () => {
     const location = useLocation();
     const id = location.pathname.split('/')[2];
+    // console.log(location.pathname.split('/')[])
 
     const [product, setProduct] = useState({})
     const [quantity, setQuantity] = useState(1)

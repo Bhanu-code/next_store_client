@@ -6,6 +6,8 @@ import Products from './components/Products'
 import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 
+import { ToastContainer } from 'react-toastify';
+
 const Home = () => {
     return (
         <div style={{ overflow: 'hidden' }} >
@@ -16,6 +18,7 @@ const Home = () => {
             <Products />
             <Newsletter />
             <Footer />
+            <ToastContainer />
         </div>
     )
 }

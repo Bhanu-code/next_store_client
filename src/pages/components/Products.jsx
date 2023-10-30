@@ -4,6 +4,9 @@ import Product from "./Product"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
+import { ColorRing } from 'react-loader-spinner';
+
 const Container = styled.div`
 padding: 20px;
 display: flex;
@@ -25,7 +28,9 @@ const Products = ({ cat, filters, sort }) => {
             : `${import.meta.env.VITE_URL}products`
         );
         setProducts(res.data);
-      } catch (err) { }
+      } catch (err) {
+        console.log(error)
+      }
     };
     getProducts();
   }, [cat]);
@@ -60,14 +65,26 @@ const Products = ({ cat, filters, sort }) => {
   return (
     <>
       <h2 style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>Trending Products</h2>
-      {products ? 
-      <Container>
-        {filteredProducts ?
-          cat ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
-            : products
-              .slice(2, 10)
-              .map((item) => <Product item={item} key={item.id} />) : <h1>Loading</h1>}
-      </Container> : <h1>Loading...</h1>
+      {products.length > 0 ?
+        <Container>
+          {
+            cat ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+              : products
+                .slice(2, 10)
+                .map((item) => <Product item={item} key={item.id} />)}
+        </Container>
+        :
+        <div style={{ display: "flex", justifyContent: "center"}}>
+          <ColorRing
+            visible={true}
+            height="50"
+            width="50"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={['black']}
+          />
+        </div>
       }
     </>
 
