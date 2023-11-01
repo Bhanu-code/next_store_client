@@ -15,6 +15,17 @@ export const login = async (dispatch, user) => {
     }
 }
 
+export const register = async (user) => {
+
+    try {
+        const res = await publicRequest.post('/auth/register', user)
+        console.log(res);
+        // return res;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const logout = (dispatch) => {
     dispatch(logOut());
 }

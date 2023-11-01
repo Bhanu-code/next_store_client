@@ -29,7 +29,7 @@ const Products = ({ cat, filters, sort }) => {
         );
         setProducts(res.data);
       } catch (err) {
-        console.log(error)
+        console.log(err)
       }
     };
     getProducts();

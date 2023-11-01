@@ -74,7 +74,6 @@ const Login = () => {
             <Title>LOGIN</Title>
             <Form>
                 <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)} />
-                {/* <Input placeholder="email" type="email" /> */}
                 <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
                 <Button onClick={handleLogin} disabled={isFetching} >LOGIN</Button>
                 <Link>FORGOT PASSWORD?</Link>

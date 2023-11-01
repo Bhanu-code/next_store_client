@@ -17,7 +17,9 @@ const userSlice = createSlice({
         loginSuccess: (state, action)=>{
            state.isFetching = false;
            state.currentUser = action.payload;
-           toast.success('logged in');
+           toast.success('Successfully logged in', {
+            position: toast.POSITION.TOP_CENTER,
+           });
            
         },
         loginFail: (state)=>{
