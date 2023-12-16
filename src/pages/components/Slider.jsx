@@ -107,7 +107,7 @@ const Slider = () => {
         
         <Slide>
           <ImgContainer>
-            <Image src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+            <Image src="" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
@@ -117,7 +117,7 @@ const Slider = () => {
         </Slide>
         <Slide>
           <ImgContainer>
-            <Image src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png" />
+            <Image src="" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
