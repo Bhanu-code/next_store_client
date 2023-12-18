@@ -107,7 +107,7 @@ const Slider = () => {
         
         <Slide>
           <ImgContainer>
-            <Image src="" />
+            <Image src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19473744/2022/9/13/5b4fc687-b93b-4141-aeb6-1bd82db75e671663054576612-Antheaa-Women-Dresses-631663054576038-1.jpg" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
@@ -117,7 +117,7 @@ const Slider = () => {
         </Slide>
         <Slide>
           <ImgContainer>
-            <Image src="" />
+            <Image src="https://assets.ajio.com/medias/sys_master/root/20230624/d2lM/64966b12a9b42d15c9ddcd02/-473Wx593H-465410816-burgundy-MODEL.jpg" />
           </ImgContainer>
           <InfoConatiner>
             <Title>SUMMER SALE</Title>
