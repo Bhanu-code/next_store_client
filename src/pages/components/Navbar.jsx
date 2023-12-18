@@ -82,7 +82,7 @@ const Navbar = () => {
     const handleLogout = () => {
         e.preventDefault();
         logout(dispatch);
-        navigateTo('/');
+        // navigateTo('/');
     }
 
     return (
