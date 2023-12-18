@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "",
+      img: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19473744/2022/9/13/5b4fc687-b93b-4141-aeb6-1bd82db75e671663054576612-Antheaa-Women-Dresses-631663054576038-1.jpg",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
@@ -9,7 +9,7 @@ export const sliderItems = [
     },
     {
       id: 2,
-      img: " ",
+      img: "https://assets.ajio.com/medias/sys_master/root/20230624/d2lM/64966b12a9b42d15c9ddcd02/-473Wx593H-465410816-burgundy-MODEL.jpg",
       title: "AUTUMN COLLECTION",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "fcf1ed",
@@ -17,7 +17,7 @@ export const sliderItems = [
     },
     {
       id: 3,
-      img: "",
+      img: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23588162/2023/10/20/ef781130-806f-443d-9c1e-5a0b22d8ca711697791537206-DressBerry-Women-Dresses-6101697791536849-1.jpg",
       title: "LOUNGEWEAR LOVE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "fbf0f4",
@@ -28,19 +28,19 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "",
+      img: "https://img01.ztat.net/article/spp-media-p1/fd771bfd5eed439786a37abd76f2c6c9/5b57bd3fdafe42e58fc1151ac359504b.jpg?imwidth=1800",
       title: "SHIRT STYLE!",
       cat: "coat",
     },
     {
       id: 2,
-      img: "",
+      img: "https://hips.hearstapps.com/hmg-prod/images/denim-1657129735.png?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*",
       title: "LOUNGEWEAR LOVE",
       cat: "jeans",
     },
     {
       id: 3,
-      img: "",
+      img: "https://assets.ajio.com/medias/sys_master/root/20211103/C0AV/61818634f997ddf8f1f7c9a5/-473Wx593H-460910773-lavender-MODEL.jpg",
       title: "LIGHT JACKETS",
       cat: "women",
     },

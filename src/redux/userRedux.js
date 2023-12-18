@@ -8,8 +8,7 @@ const userSlice = createSlice({
     initialState: {
         currentUser: null,
         isFetching: false,
-        error: false,
-        token: false
+        error: false
     },
     reducers:{
         loginStart: (state)=>{
@@ -17,8 +16,7 @@ const userSlice = createSlice({
         },
         loginSuccess: (state, action)=>{
            state.isFetching = false;
-           state.currentUser = action.payload.username;
-           state.token = action.payload.accessToken;
+           state.currentUser = action.payload;
            toast.success('Successfully logged in', {
             position: toast.POSITION.TOP_CENTER,
            });
@@ -32,9 +30,7 @@ const userSlice = createSlice({
         logOut: (state)=>{
             state.isFetching = false;
             state.currentUser = null;
-            state.error = false;
-            state.token = false;
-            console.log(state)
+            state.error = false;    
                
         },
     },
