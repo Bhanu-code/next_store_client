@@ -74,7 +74,6 @@ const Register = () => {
   const navigateTo = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     if (user.password !== final_password) {
       toast.warn('Passwords are not matching!', {
         position: toast.POSITION.TOP_CENTER,

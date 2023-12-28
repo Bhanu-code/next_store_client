@@ -55,17 +55,20 @@ cursor: pointer;
 `
 
 const Login = () => {
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state)=> state.user)
 
+
   const handleLogin = (e)=>{
-    e.preventDefault()
+    e.preventDefault();
     login(dispatch, {username, password})
     if(error == true){
       toast.warning("Either username or password is wrong! Try Again.")
     }
+    // NavigateNextTwoTone('/');
   }
 
   return (

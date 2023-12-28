@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 // import Badge from '@mui/material/Badge';
 // or
-import { Badge } from '@mui/material';
+import { Badge, Button } from '@mui/material';
 import { Link } from "react-router-dom"
 
 import { Search, ShoppingCart } from '@mui/icons-material';
 import { mobile } from '../responsive';
 import { useDispatch, useSelector } from 'react-redux';
-import {logout} from '../../redux/userCalls'
+import { logout } from '../../redux/userCalls'
 
 import { useNavigate } from 'react-router-dom';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -73,16 +73,18 @@ ${mobile({ width: "50px" })}
 `
 
 const Navbar = () => {
-    const user = useSelector(state => state.user.currentUser);
+    const token = document.cookie.includes('jwt');
+    // const user = useSelector(state => state.user.currentUser);
     const quantity = useSelector(state => state.cart.quantity);
 
-    const navigateTo = useNavigate();
-    const dispatch = useDispatch();
 
-    const handleLogout = () => {
+    const dispatch = useDispatch();
+    const navigateTo = useNavigate();
+
+    const handleLogout = (e) => {
         e.preventDefault();
         logout(dispatch);
-        // navigateTo('/');
+        navigateTo('/');
     }
 
     return (
@@ -106,19 +108,17 @@ const Navbar = () => {
                             </Badge>
                         </MenuItem>
                     </Link>
-                    {!user && <>
+                    {!token && <>
                         <Link to='/login' >
-                            <MenuItem>LOGIN</MenuItem>
+                            <Button >Login</Button>
                         </Link>
                         <Link to='/register'>
-                            <MenuItem>REGISTER</MenuItem>
+                            <Button >Register</Button>
                         </Link>
                     </>
                     }
-                    {user &&
-                        <Link onClick={handleLogout}>
-                            <MenuItem>LOGOUT</MenuItem>
-                        </Link>
+                    {token &&
+                        <Button onClick={handleLogout}>LOGOUT</Button>
                     }
                 </Right>
             </Wrapper>
